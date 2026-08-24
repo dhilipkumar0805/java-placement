@@ -1,19 +1,23 @@
 import java.util.Scanner;
 
-class ProductOfDigits {
+public class CountEvenDigits {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter a number: ");
         int n = sc.nextInt();
 
-        int product = 1;
+        int count = 0;
 
         while (n != 0) {
-            product *= n % 10;
+            int digit = n % 10;
+
+            if (digit % 2 == 0)
+                count++;
+
             n /= 10;
         }
 
-        System.out.println("Product of digits = " + product);
+        System.out.println("Even digits = " + count);
     }
 }
